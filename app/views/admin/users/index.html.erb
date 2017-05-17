@@ -1,0 +1,12 @@
+<table>
+<% @users.each do |user| %>
+      <tr>
+        <td><%=link_to(user.firstName, admin_user_path(user)) %></td>
+        <td><%= link_to 'Show', [:admin, user] %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+        <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</table>
+
+<%= link_to "Nouvel utilisateur", new_admin_user_path %>
